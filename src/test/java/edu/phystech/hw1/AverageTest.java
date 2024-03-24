@@ -10,15 +10,14 @@ public class AverageTest {
     // average(1), average(1, 2), average(1, 2, 3, 4, 5, 10) и тп.
 
     private static double average(int... nums) {
-        int size = nums.length;
-        if (size == 0) {
+        if (nums.length == 0) {
             return 0;
         }
         double sum = 0;
-        for(int i = 0; i < size;i++) {
-            sum+= nums[i];
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
         }
-        return (double) sum/size;
+        return (double) sum / nums.length;
     }
 
     @Test
