@@ -10,7 +10,7 @@ public class RemoveNumberTest {
     private static int[] removeElement(int[] input, int element) {
 
         int size = 0;
-        for(int i = 0; i < input.length;i++) {
+        for (int i = 0; i < input.length; i++) {
             if (input[i] != element) {
                 size++;
             }
@@ -18,7 +18,7 @@ public class RemoveNumberTest {
         int ans[] = new int[size];
         int i = 0;
         int idx = 0;
-        while (i != input.length){
+        while (i != input.length) {
             if (input[i] != element) {
                 ans[idx] = input[i];
                 idx++;

@@ -14,12 +14,13 @@ public class FindNumberTest {
         boolean flag = false;
         int middle = 0;
         while (left <= right && flag != true) {
-            middle = (left+right)/2;
-            if(element > input[middle]) {
+            middle = (left + right) / 2;
+            if (element > input[middle]) {
                 left = middle + 1;
-            } if (element < input[middle]) {
+            }
+            if (element < input[middle]) {
                 right = middle - 1;
-            }else{
+            } else {
                 if (element == input[middle]) {
                     flag = true;
                 }
