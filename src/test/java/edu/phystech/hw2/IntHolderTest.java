@@ -10,23 +10,60 @@ class IntHolder {
     private int value;
 
     public int getValue() {
-        return 0;
+        return value;
     }
 
-    public void swap(IntHolder other) {}
+    public void swap(IntHolder other) {
+        int tmp = this.value;
+        this.value = other.value;
+        other.value = tmp;
+    }
 
-    public IntHolder(int value) {}
+    public IntHolder(int value) {
+        this.value = value;
+    }
 
-    public static IntHolder valueOf(int x) { return null; }
+    public static IntHolder valueOf(int x) {
+        return new IntHolder(x);
+    }
 
-    public IntHolder plus(IntHolder rhv) { return null; }
+    public IntHolder plus(IntHolder rhv) {
+        return new IntHolder(this.value + rhv.value);
+    }
 
-    public IntHolder minus(IntHolder rhv) { return null; }
+    public IntHolder minus(IntHolder rhv) {
+        return new IntHolder(this.value - rhv.value);
+    }
 
-    public IntHolder times(IntHolder rhv) { return null; }
-    public IntHolder div(IntHolder rhv) { return null; }
+    public IntHolder times(IntHolder rhv) {
+        return new IntHolder(this.value * rhv.value);
+    }
+    public IntHolder div(IntHolder rhv) {
+        if (rhv.value != 0) {
+            return new IntHolder(this.value / rhv.value);
+        }
+        throw new ArithmeticException("Деление на 0");
+    }
+
+    @Override
+    public boolean equals(Object foo) {
+        if (this == foo) {
+            return true;
+        }
+        if (foo == null || getClass() != foo.getClass()) {
+            return false;
+        }
+        IntHolder intHolder = (IntHolder) foo;
+        return value == intHolder.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
 
 }
+
 
 public class IntHolderTest {
 
