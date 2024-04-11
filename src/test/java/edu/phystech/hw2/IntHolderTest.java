@@ -39,10 +39,7 @@ class IntHolder {
         return new IntHolder(this.value * rhv.value);
     }
     public IntHolder div(IntHolder rhv) {
-        if (rhv.value != 0) {
-            return new IntHolder(this.value / rhv.value);
-        }
-        throw new ArithmeticException("Деление на 0");
+        return new IntHolder(this.value / rhv.value);
     }
 
     @Override
