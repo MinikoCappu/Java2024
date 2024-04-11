@@ -9,7 +9,7 @@ public abstract class KeywordAnalyzer implements TextAnalyzer {
 
     public KeywordAnalyzer(List<String> keywords, Label label) {
         if (keywords == null || keywords.isEmpty()) {
-            throw new  IllegalArgumentException("Keywords not null or empty");
+            throw new  IllegalArgumentException("Keywords null or empty");
         }
         this.keywords = keywords;
         this.label = label;
