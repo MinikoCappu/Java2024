@@ -13,7 +13,7 @@ public class NegativeTextAnalyzer extends KeywordAnalyzer {
     @Override
     public Label processText(String text) {
         for (String word : this.getKeywords()) {
-            if (text.indexOf(word) == text.length() - 2) {
+            if (text.indexOf(word) == text.length() - word.length()) {
                 return Label.NEGATIVE;
             }
         }
